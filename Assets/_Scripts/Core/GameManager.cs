@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    private Camera _camera;
+    public Camera _camera;
+    
+    [Space, Tooltip("Khi chọn Tile gọi sự kiện trả về Tile đó")]
+    public UnityEvent<Tile> E_SelectTile;
+    
     private Ray _ray;
     private Touch _touch;
     private RaycastHit _hit;
@@ -18,12 +23,18 @@ public class GameManager : MonoBehaviour
     {
         HandleInput();
     }
-
-    #if UNITY_ANDROID
+    
+    #if !UNITY_ANDROID
     private void HandleInput()
     {
-        if (Input.touchCount <= 0) 
+        if (Input.touchCount <= 0)
+        {
+            if (_tile == null) return;
+            
+            _tile.outlinable.enabled = false;
+            _tile = null;
             return;
+        }
         
         _touch = Input.GetTouch(0);
         _ray = _camera.ScreenPointToRay(_touch.position);
@@ -31,7 +42,7 @@ public class GameManager : MonoBehaviour
         switch (_touch.phase)
         {
             case TouchPhase.Began or TouchPhase.Moved:
-                if (Physics.Raycast(_ray, out _hit) && TileData.Contains(_hit.collider, out var tile))
+                if (Physics.Raycast(_ray, out _hit) && TileData.Contains(_hit.collider.gameObject, out var tile))
                 {
                     if (_tile != null && _tile != tile) 
                         _tile.outlinable.enabled = false;
@@ -39,9 +50,10 @@ public class GameManager : MonoBehaviour
                     _tile.outlinable.enabled = true;
                 }
                 break;
+            
             case TouchPhase.Ended when _tile != null:
-                _tile.outlinable.enabled = false;
-                _tile.gameObject.SetActive(false);
+                E_SelectedTile?.Invoke(_tile);
+                _tile.Release();
                 _tile = null;
                 break;
         }
@@ -49,26 +61,31 @@ public class GameManager : MonoBehaviour
     #else
     private void HandleInput()
     {
-        if (_tile != null && !Input.GetMouseButton(0))
+        switch (_tile != null)
         {
-            _tile.outlinable.enabled = false;
-            _tile = null;
-        }
-        _ray = _camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(_ray, out _hit) && TileData.Contains(_hit.collider, out var tile))
-        {
-            _tile = tile;
-            _tile.outlinable.enabled = true;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                // TODO ???
-                _tile.gameObject.SetActive(false);
+            case true when !Input.GetMouseButton(0):
+                _tile.outlinable.enabled = false;
                 _tile = null;
-            }
+                break;
+            
+            case true when Input.GetMouseButton(0):
+                E_SelectTile?.Invoke(_tile);
+                _tile.Release();
+                _tile = null;
+                return;
         }
+        
+        _ray = _camera.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(_ray, out _hit) || !TileData.Contains(_hit.collider.gameObject, out var tile)) 
+            return;
+        
+        _tile = tile;
+        _tile.outlinable.enabled = true;
     }
     #endif
+    
+    
+    
     
 
     

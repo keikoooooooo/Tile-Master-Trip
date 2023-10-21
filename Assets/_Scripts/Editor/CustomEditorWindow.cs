@@ -45,10 +45,6 @@ public class CustomEditorWindow : EditorWindow
             case 1:
                 HandleMap();
                 break;
-            
-            default: 
-                Debug.Log("No Selected");
-                break;
         }
     }
 
@@ -181,11 +177,9 @@ public class CustomEditorWindow : EditorWindow
         GUILayout.BeginHorizontal();
         GUILayout.Label("Idx", Width(30));
         GUILayout.Label("Type", Width(100));
-        GUILayout.Label("Sprite", Width(100));
-        
-        if (GUILayout.Button("+", Width(20), Height(20))) 
-            CreateTileType();
-        
+        GUILayout.Label("Sprite", Width(75));
+        GUILayout.Label("Chance", Width(60));
+        if (GUILayout.Button("+", Width(20), Height(20))) { CreateTileType(); }
         GUILayout.EndHorizontal();
         
         if(mapDataSO.maps[_selectedMap].tileTypes == null || mapDataSO.maps[_selectedMap].tileTypes.Count == 0)
@@ -194,13 +188,12 @@ public class CustomEditorWindow : EditorWindow
         for (var i = 0; i <  mapDataSO.maps[_selectedMap].tileTypes.Count; i++)
         {
             GUILayout.BeginHorizontal();
-            
             GUILayout.Label(i.ToString(), Width(30));
-            var tile = mapDataSO.maps[_selectedMap].tileTypes[i];
-            tile.typeEnums = (TileType.TileTypeEnums)EditorGUILayout.EnumPopup("", tile.typeEnums, Width(100));
-            tile.sprite = (Sprite)EditorGUILayout.ObjectField(tile.sprite, typeof(Sprite), false, Width(75), Height(75));
+            var tileType = mapDataSO.maps[_selectedMap].tileTypes[i];
+            tileType.typeEnums = (TileTypeEnums)EditorGUILayout.EnumPopup("", tileType.typeEnums, Width(100));
+            tileType.sprite = (Sprite)EditorGUILayout.ObjectField(tileType.sprite, typeof(Sprite), false, Width(75), Height(75));
+            tileType.chance = EditorGUILayout.IntField("", tileType.chance, Width(50));
             OnButtonClick(i, mapDataSO.maps[_selectedMap].tileTypes.Count - 1);
-            
             GUILayout.EndHorizontal();
         }
     }

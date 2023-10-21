@@ -17,4 +17,14 @@ MonoBehaviour:
   playTime: 0
   tileTypes:
   - typeEnums: 0
-    sprite: {fileID: 0}
+    sprite: {fileID: 1189316821, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 1
+  - typeEnums: 1
+    sprite: {fileID: 1088912734, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 1
+  - typeEnums: 2
+    sprite: {fileID: 1993236353, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 1
+  - typeEnums: 3
+    sprite: {fileID: 1650110608, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 1
