@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 315363771072273890}
   - component: {fileID: 1268488917975271004}
   - component: {fileID: 4042676895948137610}
-  m_Layer: 0
+  - component: {fileID: 8628154230569411113}
+  m_Layer: 6
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,8 +157,9 @@ MonoBehaviour:
   lookAtCamera: {fileID: 4042676895948137610}
   spriteRenderer: {fileID: 6372493200817025963}
   outlinable: {fileID: 315363771072273890}
+  audio: {fileID: 8628154230569411113}
   clampX: {x: 0.1, y: 0.9}
-  clampY: {x: 0.2, y: 0.9}
+  clampY: {x: 0.27, y: 0.85}
 --- !u!114 &4042676895948137610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e80a266280679f4caf90451423ead18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8628154230569411113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555456976539171914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab4620c6b47d904ca98f26d45547b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 6ba5647248a1ab94d8ecc2a88ab6bbfe, type: 3}
+  audioMode: 1
 --- !u!1 &3898585750840685439
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +198,7 @@ GameObject:
   - component: {fileID: 8615565197846579979}
   - component: {fileID: 186528907359508436}
   - component: {fileID: 315363770011454197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +295,7 @@ GameObject:
   - component: {fileID: 6372493200817025964}
   - component: {fileID: 6372493200817025963}
   - component: {fileID: 315363771504190582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

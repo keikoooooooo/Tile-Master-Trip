@@ -20,7 +20,7 @@ public class Tile_UI : MonoBehaviour, IPooled<Tile_UI>
         else
         {
             icon.sprite = _tile.spriteRenderer.sprite;
-            typeEnums = _tile.typeEnums;
+            typeEnums = _tile.tileType.typeEnums;
             tile = _tile;
         }
     }

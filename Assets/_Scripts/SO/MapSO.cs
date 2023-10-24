@@ -6,14 +6,9 @@ using UnityEngine;
 public class MapSO : ScriptableObject
 {
    public string mapName;
-
-   public int level;
-
-   public int playTime;
    
    [Space] 
    public List<TileType> tileTypes;
-   
 }
 
 
@@ -23,10 +18,10 @@ public class TileType
    [Tooltip("Loại khối, phân loại bằng Enum tương ứng tên của Icon")]
    public TileTypeEnums typeEnums;
 
-   [Tooltip("Icon của khối")]
+   [Tooltip("Icon khối")]
    public Sprite sprite;
 
-   [Tooltip("Giá trị xuất hiện khối (x3) giá trị")]
+   [Tooltip("Tỉ lệ xuất hiện khối (x3) / 1 Chance")]
    public int chance = 1;
 }
 

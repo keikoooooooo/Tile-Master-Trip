@@ -16,7 +16,7 @@ public class CustomEditorWindow : EditorWindow
     
     
     // Variables in ToolBar
-    private readonly string[] _toolTitles = { "GAMEPLAY", "MAPS" };
+    private readonly string[] _toolTitles = {"MAPS", "GAMEPLAY" };
     private int _selectedTool = -1;
 
     
@@ -30,31 +30,26 @@ public class CustomEditorWindow : EditorWindow
     
     private void OnEnable()
     {
-        _iconArrowUp = EditorGUIUtility.Load("Assets/Resources/Sprite/Icon_Arrow_Up.png") as Texture2D;
-        _iconArrowDown = EditorGUIUtility.Load("Assets/Resources/Sprite/Icon_Arrow_Down.png") as Texture2D;
+        _iconArrowUp = EditorGUIUtility.Load("Assets/Resources/Sprite/Packer Data/Icon_Arrow_Up.png") as Texture2D;
+        _iconArrowDown = EditorGUIUtility.Load("Assets/Resources/Sprite/Packer Data/Icon_Arrow_Down.png") as Texture2D;
     }
     public void OnGUI()
     {
         _selectedTool = GUILayout.Toolbar(_selectedTool, _toolTitles, Width(200), Height(35));
         switch (_selectedTool)
         {
-            case 0: 
+            case 0:
+                HandleMap();
+                break;
+            
+            case 1: 
                 HandleGamePlay();
                 break;
             
-            case 1:
-                HandleMap();
-                break;
+            // TODO ???
         }
     }
-
     
-    #region GAMEPLAY
-    private void HandleGamePlay()
-    {
-        
-    }
-    #endregion
 
     #region MAPS
     private void HandleMap()
@@ -167,8 +162,8 @@ public class CustomEditorWindow : EditorWindow
         GUILayout.Label("Map Details", EditorStyles.boldLabel);
         
         mapDataSO.maps[_selectedMap].mapName  = EditorGUILayout.TextField("Map Name",  mapDataSO.maps[_selectedMap].mapName, Width(300));
-        mapDataSO.maps[_selectedMap].level    = EditorGUILayout.IntField( "Level",         mapDataSO.maps[_selectedMap].level,   Width(300));
-        mapDataSO.maps[_selectedMap].playTime = EditorGUILayout.IntField( "Play Time (s)", mapDataSO.maps[_selectedMap].playTime,Width(300));
+        // mapDataSO.maps[_selectedMap].level    = EditorGUILayout.IntField( "Level",         mapDataSO.maps[_selectedMap].level,   Width(300));
+        // mapDataSO.maps[_selectedMap].playTime = EditorGUILayout.IntField( "Play Time (s)", mapDataSO.maps[_selectedMap].playTime,Width(300));
     }
     private void ShowTileDetails() // Hiển thị chi tiết ngói của Map
     {
@@ -198,11 +193,14 @@ public class CustomEditorWindow : EditorWindow
         }
     }
     #endregion
-
+    
+    #region GAMEPLAY
+    private void HandleGamePlay() { }
+    #endregion
 
     
     
-    // Static Methods
+    // Base Methods
     private static void Space(float _space) => GUILayout.Space(_space);
     private static GUILayoutOption Width(float _width) => GUILayout.Width(_width);
     private static GUILayoutOption Height(float _height) => GUILayout.Height(_height);

@@ -105,7 +105,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 51
+    textureFormat: 52
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -145,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 0
+        y: 3
         width: 275
         height: 160
       alignment: 0
@@ -165,10 +165,10 @@ TextureImporter:
       name: Frame_Sheet_1
       rect:
         serializedVersion: 2
-        x: 276
-        y: 72
-        width: 88
-        height: 88
+        x: 564
+        y: 76
+        width: 87
+        height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 25, y: 25, z: 25, w: 25}
@@ -186,12 +186,12 @@ TextureImporter:
       name: Frame_Sheet_2
       rect:
         serializedVersion: 2
-        x: 365
-        y: 32
+        x: 436
+        y: 34
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 15, y: 15, z: 15, w: 15}
       outline: []
       physicsShape: []
@@ -199,6 +199,69 @@ TextureImporter:
       bones: []
       spriteID: 86e56845101c7e946b70ce8a8d2e3cd0
       internalID: -1369709808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 76
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 43, y: 43, z: 44, w: 44}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfe418afaf89c04a9d61857e8552144
+      internalID: 987548289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 32
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 15, y: 21, z: 16, w: 21}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af43303be0c50b741bef0b26426b641f
+      internalID: 769227965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 9
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0420c3b41541df4291360ab8e494a1a
+      internalID: 1160434138
       vertices: []
       indices: 
       edges: []
@@ -218,6 +281,8 @@ TextureImporter:
       Frame_Sheet_1: 1906369562
       Frame_Sheet_2: -1369709808
       Frame_Sheet_3: 987548289
+      Frame_Sheet_4: 769227965
+      Frame_Sheet_5: 1160434138
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

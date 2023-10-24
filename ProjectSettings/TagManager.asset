@@ -11,7 +11,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Tile
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Core
     uniqueID: 4219978499
+    locked: 0
+  - name: GUI
+    uniqueID: 417017955
     locked: 0

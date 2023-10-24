@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651be7f9f93789544859a3c828a97b04, type: 3}
+  m_Name: MAP3
+  m_EditorClassIdentifier: 
+  mapName: MAP 3
+  tileTypes:
+  - typeEnums: 0
+    sprite: {fileID: 1189316821, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 3
+  - typeEnums: 1
+    sprite: {fileID: 1088912734, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 3
+  - typeEnums: 2
+    sprite: {fileID: 1993236353, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 3
+  - typeEnums: 3
+    sprite: {fileID: 1650110608, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 3
+  - typeEnums: 4
+    sprite: {fileID: 290654996, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 3
+  - typeEnums: 5
+    sprite: {fileID: -96153757, guid: 3b151e994e0016744a337675035614bd, type: 3}
+    chance: 3

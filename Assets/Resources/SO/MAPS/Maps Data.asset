@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maps:
   - {fileID: 11400000, guid: 53f6e53311c42744b8cd53811c98b770, type: 2}
+  - {fileID: 11400000, guid: 3c7a8b14173c5a9498e48a0fe42b6dba, type: 2}
+  - {fileID: 11400000, guid: c39c47c579d57494aa1086921d8ac8f9, type: 2}
